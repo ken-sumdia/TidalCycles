@@ -1,0 +1,17 @@
+setcps 0.6
+
+d1
+)
+   $ s "~ hoover"
+   # gain 1.2
+   # size 0.9
+   # orbit 0
+   # delayt 0.125
+   # delayfb 0.7
+
+   hush
+
+d2 $ s "k*4 ~" # gain 1.2
+
+
+   hush

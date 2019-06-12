@@ -1,0 +1,97 @@
+cps 100--(140/60/4)
+
+d1 $ s "[bd:2 sn:4]*2 arpy:7*4 [cp hh]"
+
+d1 $ sound "[[bd bd]*2 [sd sd sd sd]]*2"
+
+d1 $ sound "[hoover bd3 bd, sd cp sd cp]"
+
+d1 $ sound "hoover bd bd hoover bd bd"
+
+d1 $ sound "[bd bd bd, sd cp sd cp, arpy arpy, hoover]"
+
+d1 $ sound "[bd [sn sn]*2]/2 [bd [sn bd]/2]*2"
+
+d1 $ rev (s "bd*2 [bd [sn sn*2 sn] sn]")
+
+d1 $ rev (s "bd bd hoover cp")
+
+d1 $ every 4 (rev) (sound "bd*2 [drum [drum:2 drum:2*2 drum:2] sn]")
+
+d1 $ every 4 (rev) (s "bd bass2:7 cp")
+
+d1 $ slow 4 $ sound "bd*2 [bd [sn sn*2 cp] hoover]"
+
+d1 $ fast 4 $ sound "bd*2 [bd [sn sn*2 sn] sn]"
+
+d1 $ every 4 (fast 2) $ sound "bd*2 [bd [sn sn*2 sn] sn]"
+
+d1 $ sound (every 4 (fast 2) "bd*2 [bd [sn sn*2 sn] sn]")
+
+d1 $ sound "bd*4" # crush "4"
+
+d1 $ sound "bd*4"
+   # crush "3"
+   # speed "2"
+
+d1 $ every 2 (|+ speed "1")
+   $ sound "arpy*4" |> speed "1"
+
+d1 $ every 3 (|- vowel "3") $ every 2 (|+ up "5") $ sound "hoover*4" |> vowel "0 2 4 5"
+
+d1 $ gain "1 0.8 0.5 0.7" # sound "bd"
+
+d1 $ sound "bass*4" # gain (every 3 (rev) $ "1 0.8 0.5 0.7")
+
+d1 $ sound "bd*4" # gain "1 0.8 0.5 0.7"
+
+d1 $ sound "bd*4 sn*4" # gain "[[1 0.8]*2 [0.5 0.7]]/2"
+
+d1 $ sound "arpy(3,6)" # n "2"
+
+d1 $ sound "arpy(5,8)" # n "2 5"
+
+d1 $ sound "arpy(3,8)" # n ("1 4" * 2)
+
+d1 $ sound "arpy(6,8)" # n (every 8 (* 2) "0 1")
+
+d1 $ n (off 0.125 (+12)
+   $ off 0.25 (+7)
+   $ slow 4
+   $ "0(3,10) [3 10]")
+   # sound "supergong"
+
+d1 $ n "[0 .. 7] [3 .. 1]"
+--   # sound "supergong"
+
+
+d2 $ s "baa:9 * 2"
+
+d3 $ s "bass3:10 * 4"
+
+d4 $ s "hoover:1 hoover:1 hoover:2"
+
+d4 $ s "hoover:0*2"
+
+d5 $ s "hh hh hh hh"
+
+d6 $ sound "bd sd hh cp mt arpy drum odx bd arpy bass2 feel future"
+
+d1 silence
+
+d2 silence
+
+d3 silence
+
+d4 silence
+
+d5 silence
+
+d6 silence
+
+{-
+hooover:2
+
+-}
+
+hush

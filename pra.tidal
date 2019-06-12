@@ -1,0 +1,76 @@
+d1 $ sound "bd"
+
+d1 $ sound "bd [sd sd]"
+
+d1 $ sound "bd [sd sd sd]"
+
+d1 $ sound "bd [sd sd sd sd]"
+
+d1 $ sound "[bd bd] [sd sd sd sd]"
+
+d1 $ sound "[bd bd bd] [sd sd]"
+
+d1 $ sound "[bd bd bd bd] [sd]"
+
+d1 $ sound "bd sd:3"
+
+d1 $ sound "bd <arpy:1 arpy:2 arpy:3>"
+
+d1 $ sound "bd*2"
+
+d1 $ sound "bd:1 sn:3"
+
+d1 $ sound "bd [[sn:1*2] bd] [sn:1 [bd*2]]"
+
+d1 $ stack[
+  sound "bd:3 [sn:1*2] ~ bd:3",
+  sound "bass ~ bass:3 ~",
+  sound "[~ cp]*4"
+]
+
+d1 $ stack[
+  sound "bd:3 [sn:1*2] ~ bd:3" |+| gain "1.0",
+  sound "bass ~ bass:3 ~" |+| gain "1.2",
+  sound "[~ cp]*4"|+| gain "2.0" |+| pan rand
+]
+
+d1 $
+jux (rev) $
+stack[
+  sound "bd:3 [sn:1*2] ~ bd:3" |+| gain "1.0",
+  sound "bass ~ bass:3 ~" |+| gain "1.2",
+  sound "[~ cp]*4"|+| gain "0.8" |+| pan rand
+]
+
+d1 $
+jux (rev) $
+chop 16 $
+stack[
+  sound "bd:3 [sn:1*2] ~ bd:3" |+| gain "1.0",
+  sound "bass ~ bass:3 ~" |+| gain "1.2",
+  sound "[~ cp]*4"|+| gain "0.8" |+| pan rand
+]
+
+d1 $
+jux (rev) $
+every 4 (chop 16) $
+every 6 (gap 16) $
+stack[
+  sound "bd:3 [sn:1*2] ~ bd:3" |+| gain "1.0",
+  sound "bass ~ bass:3 ~" |+| gain "1.2",
+  sound "[~ cp]*4"|+| gain "0.8" |+| pan rand
+]
+
+d1 $
+jux (iter 4) $
+every 4 (chop 16) $
+every 6 (gap 16) $
+stack[
+  sound "bd:5 [sn:1*2] ~ bd:3" |+| gain "1.6",
+  sound "bass ~ bass:3 ~" |+| gain "1.5",
+  sound "[~ cp]*4"|+| gain "1.0" |+| pan rand
+]
+
+d1 $ sound silence
+
+hush
